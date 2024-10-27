@@ -6,16 +6,15 @@
     <title>MOHAMMED NADEER KV</title>
     <style>
         body {
-            font-family: 'Verdana', sans-serif; /* Changed font style */
+            font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
-            background-color: #f0f4f8; /* Light background color */
         }
 
         header {
-            background: #2C3E50; /* Header color */
+            background: #4A90E2; /* Changed header color */
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -54,7 +53,6 @@
             border: 1px solid #ddd;
             padding: 20px;
             border-radius: 8px;
-            background-color: #fff; /* White background for sections */
             transition: transform 0.3s;
         }
 
@@ -66,8 +64,8 @@
         footer {
             text-align: center;
             padding: 20px 0;
-            background: #333; /* Footer color */
-            color: #FFC107; /* Footer text color */
+            background: #333; /* Changed footer color */
+            color: #FFC107; /* Changed footer text color */
         }
 
         a {
@@ -164,18 +162,16 @@
                 <li>Monitored and tracked lead engagement to optimize follow-up strategies.</li>
                 <li>Used CRM features for tracking conversion rates.</li>
             </ul>
-            <p><strong>Lead Report:</strong> <a href="https://claude.site/artifacts/d7623292-8189-4c69-8f0e-59bbc2909a2b" target="_blank">View Lead Report</a></p>
         </section>
 
         <section id="poster-design">
             <h2>Poster Design with Canva</h2>
             <p><strong>Objective:</strong> Design visually engaging posters for client needs.</p>
-            <p><strong>Description:</strong> I’ve designed promotional materials using Canva’s extensive tools to create attractive posters tailored to client branding requirements.</p>
+            <p><strong>Description:</strong> I’ve designed promotional materials, using Canva’s extensive tools to create attractive posters tailored to client branding requirements.</p>
             <h3>Examples of Poster Designs:</h3>
             <ul>
                 <li>Created for events, product promotions, and brand awareness.</li>
             </ul>
-            <p><strong>Instagram Story Video:</strong> <a href="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Yellow%20and%20White%20Food%20We%20Are%20Open%20Instagram%20Story.mp4" target="_blank">View Instagram Story Video</a></p>
         </section>
 
         <section id="social-media-ads">
@@ -190,23 +186,23 @@
             </ul>
         </section>
 
-<section id="downloads">
-    <h2>Downloadable Files</h2>
-    <ul>
-        <li><a href="https://raw.githubusercontent.com/nadeer12/Nadeer_Portfolio/main/A1%20Screens-Brochure.pdf" target="_blank" download>A1 Screens-Brochure.pdf</a></li>
-        <li><a href="https://raw.githubusercontent.com/nadeer12/Nadeer_Portfolio/main/SalesForce%20Lead%20Deatils%20%26%20Reports%20(1).pdf" target="_blank" download>SalesForce Lead Details & Reports (1).pdf</a></li>
-        <li><a href="https://raw.githubusercontent.com/nadeer12/Nadeer_Portfolio/main/hiring-poster.pdf" target="_blank" download>hiring-poster.pdf</a></li>
-        <li><a href="https://raw.githubusercontent.com/nadeer12/Nadeer_Portfolio/main/Logo%20Created%20by%20Canva.pdf" target="_blank" download>Logo Created by Canva.pdf</a></li>
-        <li><a href="https://raw.githubusercontent.com/nadeer12/Nadeer_Portfolio/main/Opening%20soon.pdf" target="_blank" download>Opening soon.pdf</a></li>
-        <li><a href="https://raw.githubusercontent.com/nadeer12/Nadeer_Portfolio/main/Bus%20Roots.pdf" target="_blank" download>Bus Roots.pdf</a></li>
-    </ul>
-</section>
+        <section id="downloads">
+            <h2>Downloadable Files</h2>
+            <ul>
+                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/A1%20Screens-Brochure.pdf" download>A1 Screens-Brochure.pdf</a></li>
+                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/SalesForce%20Lead%20Deatils%20%26%20Reports%20(1).pdf" download>SalesForce Lead Details & Reports (1).pdf</a></li>
+                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/hiring-poster.pdf" download>hiring-poster.pdf</a></li>
+                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/Logo%20Created%20by%20Canva.pdf" download>Logo Created by Canva.pdf</a></li>
+                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/Opening%20soon.pdf" download>Opening soon.pdf</a></li>
+                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/Bus%20Roots.pdf" download>Bus Roots.pdf</a></li>
+            </ul>
+        </section>
     </main>
 
     <button class="back-to-top" id="backToTop">Back to Top</button>
 
     <footer>
-        <p>&copy; 2024 Mohammed Nadeer KV</p>
+        <p>&copy; 2024 Your Name</p>
     </footer>
 
     <!-- Modal for PDF Viewing -->
@@ -230,33 +226,35 @@
         };
 
         backToTopButton.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({top: 0, behavior: 'smooth'});
         };
 
-        // Modal functionality for PDF viewing
-        const modal = document.getElementById("pdfModal");
-        const span = document.getElementsByClassName("close")[0];
+        // Modal functionality for PDF links
+        const pdfLinks = document.querySelectorAll('.pdf-link');
+        const modal = document.getElementById('pdfModal');
+        const pdfViewer = document.getElementById('pdfViewer');
+        const closeModal = document.querySelector('.close');
 
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
+        pdfLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const pdfUrl = this.getAttribute('data-pdf');
+                pdfViewer.src = pdfUrl;
+                modal.style.display = 'block';
+            });
+        });
+
+        closeModal.onclick = function() {
+            modal.style.display = 'none';
+            pdfViewer.src = ''; // Clear the source to stop the PDF from loading
+        };
 
         window.onclick = function(event) {
             if (event.target == modal) {
-                modal.style.display = "none";
+                modal.style.display = 'none';
+                pdfViewer.src = ''; // Clear the source to stop the PDF from loading
             }
-        }
-
-        // Add PDF link event listeners if needed
-        const pdfLinks = document.querySelectorAll('#downloads a');
-        pdfLinks.forEach(link => {
-            link.onclick = function(event) {
-                event.preventDefault();
-                const url = this.href;
-                modal.style.display = "block";
-                document.getElementById("pdfViewer").src = url;
-            };
-        });
+        };
     </script>
 </body>
 </html>
