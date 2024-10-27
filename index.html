@@ -4,41 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOHAMMED NADEER KV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.8;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
-            background: #f8f9fa;
-            color: #2d3436;
+            background-color: #f4f7f8; /* Light background */
+            color: #333; /* Dark text */
         }
 
         header {
-            background: linear-gradient(135deg, #6c5ce7, #a363d9);
+            background: #0056b3; /* Header color */
             color: #fff;
-            padding: 30px 20px;
+            padding: 20px;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
 
         nav ul li {
@@ -49,101 +39,67 @@
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
+            font-weight: 600; /* Bold links */
         }
 
         nav ul li a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            color: #ffc107; /* Highlight color on hover */
         }
 
         main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            padding: 20px;
+            margin-top: 10px;
         }
 
         section {
-            background: #ffffff;
             margin-bottom: 40px;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff; /* Section background */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
 
         section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        h2 {
-            color: #6c5ce7;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        h3 {
-            color: #2d3436;
-            font-size: 1.3em;
-            margin: 25px 0 15px;
-        }
-
-        p {
-            color: #636e72;
-            margin-bottom: 15px;
-        }
-
-        ul li {
-            color: #636e72;
-            margin-bottom: 10px;
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333; /* Footer color */
+            color: #ffc107; /* Footer text color */
         }
 
         a {
-            color: #6c5ce7;
+            color: #007BFF;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: text-decoration 0.3s;
         }
 
         a:hover {
-            color: #a363d9;
             text-decoration: underline;
         }
 
+        /* Back to top button */
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #6c5ce7;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background: #0056b3;
             color: #fff;
             border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-radius: 5px;
+            padding: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            opacity: 0;
-            visibility: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: #a363d9;
-            transform: translateY(-3px);
-        }
-
+        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -152,81 +108,47 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .modal-content {
-            background-color: #ffffff;
-            margin: 5% auto;
-            padding: 25px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 800px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .close {
-            color: #636e72;
+            color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        .close:hover {
-            color: #2d3436;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            background: #2d3436;
-            color: #fff;
-            margin-top: 60px;
-        }
-
-        .download-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #6c5ce7;
-            color: white;
-            border-radius: 25px;
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-
-        .download-link:hover {
-            background: #a363d9;
-            transform: translateX(5px);
+        .close:hover,
+        .close:focus {
+            color: black;
             text-decoration: none;
+            cursor: pointer;
         }
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
+        /* Responsive design */
+        @media (max-width: 600px) {
             nav ul li {
                 display: block;
                 margin: 10px 0;
-            }
-
-            section {
-                padding: 20px;
-            }
-
-            .modal-content {
-                width: 95%;
-                margin: 10% auto;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Mohammed Nadeer KV</h1>
+        <h1>Mohammed Nadeer Kv</h1>
         <nav>
             <ul>
                 <li><a href="#lead-generation">Lead Generation</a></li>
@@ -254,7 +176,7 @@
         <section id="poster-design">
             <h2>Poster Design with Canva</h2>
             <p><strong>Objective:</strong> Design visually engaging posters for client needs.</p>
-            <p><strong>Description:</strong> I've designed promotional materials using Canva's extensive tools to create attractive posters tailored to client branding requirements.</p>
+            <p><strong>Description:</strong> I’ve designed promotional materials using Canva’s extensive tools to create attractive posters tailored to client branding requirements.</p>
             <h3>Examples of Poster Designs:</h3>
             <ul>
                 <li>Created for events, product promotions, and brand awareness.</li>
@@ -269,7 +191,7 @@
             <h3>Key Actions:</h3>
             <ul>
                 <li>Developed ad copy and visuals aligned with brand goals.</li>
-                <li>Used Google Ads and Instagram's audience insights to refine targeting.</li>
+                <li>Used Google Ads and Instagram’s audience insights to refine targeting.</li>
                 <li>Tracked engagement metrics (clicks, reach, impressions) to evaluate ad effectiveness.</li>
             </ul>
         </section>
@@ -277,75 +199,73 @@
         <section id="downloads">
             <h2>Downloadable Files</h2>
             <ul>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/A1%20Screens-Brochure.pdf" class="download-link" target="_blank">A1 Screens-Brochure.pdf</a></li>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/SalesForce%20Lead%20Deatils%20%26%20Reports%20(1).pdf" class="download-link" target="_blank">SalesForce Lead Details & Reports (1).pdf</a></li>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/hiring-poster.pdf" class="download-link" target="_blank">hiring-poster.pdf</a></li>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Logo%20Created%20by%20Canva.pdf" class="download-link" target="_blank">Logo Created by Canva.pdf</a></li>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Opening%20soon.pdf" class="download-link" target="_blank">Opening soon.pdf</a></li>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Bus%20Roots.pdf" class="download-link" target="_blank">Bus Roots.pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/A1%20Screens-Brochure.pdf">A1 Screens-Brochure.pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/SalesForce%20Lead%20Deatils%20%26%20Reports%20(1).pdf">SalesForce Lead Details & Reports (1).pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/hiring-poster.pdf">hiring-poster.pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Logo%20Created%20by%20Canva.pdf">Logo Created by Canva.pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Opening%20soon.pdf">Opening soon.pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Bus%20Roots.pdf">Bus Roots.pdf</a></li>
             </ul>
         </section>
     </main>
 
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <button class="back-to-top" id="backToTop">Back to Top</button>
 
     <footer>
         <p>&copy; 2024 Mohammed Nadeer KV</p>
     </footer>
 
+    <!-- Modal for PDF Viewing -->
     <div id="pdfModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <iframe id="pdfViewer" width="100%" height="600px" frameborder="0"></iframe>
+            <iframe id="pdfFrame" width="100%" height="500px"></iframe>
         </div>
     </div>
 
     <script>
-        // Back to top button functionality
         const backToTopButton = document.getElementById('backToTop');
+        const pdfLinks = document.querySelectorAll('.pdf-link');
+        const modal = document.getElementById('pdfModal');
+        const pdfFrame = document.getElementById('pdfFrame');
+        const closeModal = document.querySelector('.close');
 
+        // Show back to top button
         window.onscroll = function() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopButton.classList.add('visible');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
             } else {
-                backToTopButton.classList.remove('visible');
+                backToTopButton.style.display = "none";
             }
         };
 
+        // Scroll to top when the button is clicked
         backToTopButton.onclick = function() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         };
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        // Open modal to view PDF
+        pdfLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const pdfUrl = this.getAttribute('data-pdf');
+                pdfFrame.src = pdfUrl;
+                modal.style.display = "block";
             });
         });
 
-        // Modal functionality
-        const modal = document.getElementById('pdfModal');
-        const pdfViewer = document.getElementById('pdfViewer');
-        const closeModal = document.querySelector('.close');
-
-        // Close modal when clicking the close button
+        // Close modal
         closeModal.onclick = function() {
             modal.style.display = "none";
-            pdfViewer.src = "";
+            pdfFrame.src = ''; // Stop PDF loading
         };
 
         // Close modal when clicking outside of it
         window.onclick = function(event) {
-            if (event.target == modal) {
+            if (event.target === modal) {
                 modal.style.display = "none";
-                pdfViewer.src = "";
+                pdfFrame.src = ''; // Stop PDF loading
             }
         };
     </script>
