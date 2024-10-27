@@ -14,7 +14,7 @@
         }
 
         header {
-            background: #4A90E2; /* Changed header color */
+            background: #4A90E2; /* Header color */
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -64,8 +64,8 @@
         footer {
             text-align: center;
             padding: 20px 0;
-            background: #333; /* Changed footer color */
-            color: #FFC107; /* Changed footer text color */
+            background: #333; /* Footer color */
+            color: #FFC107; /* Footer text color */
         }
 
         a {
@@ -153,25 +153,27 @@
 
     <main>
         <section id="lead-generation">
-    <h2>Lead Generation Using Salesforce</h2>
-    <p><strong>Objective:</strong> Generate leads effectively using Salesforce.</p>
-    <p><strong>Description:</strong> I have experience managing and nurturing client leads within Salesforce.</p>
-    <h3>Key Actions:</h3>
-    <ul>
-        <li>Created and segmented lead lists.</li>
-        <li>Monitored and tracked lead engagement to optimize follow-up strategies.</li>
-        <li>Used CRM features for tracking conversion rates.</li>
-    </ul>
-    <p><strong>Lead Report:</strong> <a href="https://claude.site/artifacts/d7623292-8189-4c69-8f0e-59bbc2909a2b" target="_blank">View My Lead Report</a></p>
-</section>
+            <h2>Lead Generation Using Salesforce</h2>
+            <p><strong>Objective:</strong> Generate leads effectively using Salesforce.</p>
+            <p><strong>Description:</strong> I have experience managing and nurturing client leads within Salesforce.</p>
+            <h3>Key Actions:</h3>
+            <ul>
+                <li>Created and segmented lead lists.</li>
+                <li>Monitored and tracked lead engagement to optimize follow-up strategies.</li>
+                <li>Used CRM features for tracking conversion rates.</li>
+            </ul>
+            <p><strong>Lead Report:</strong> <a href="https://claude.site/artifacts/d7623292-8189-4c69-8f0e-59bbc2909a2b" target="_blank">View Lead Report</a></p>
+        </section>
+
         <section id="poster-design">
             <h2>Poster Design with Canva</h2>
             <p><strong>Objective:</strong> Design visually engaging posters for client needs.</p>
-            <p><strong>Description:</strong> I’ve designed promotional materials, using Canva’s extensive tools to create attractive posters tailored to client branding requirements.</p>
+            <p><strong>Description:</strong> I’ve designed promotional materials using Canva’s extensive tools to create attractive posters tailored to client branding requirements.</p>
             <h3>Examples of Poster Designs:</h3>
             <ul>
                 <li>Created for events, product promotions, and brand awareness.</li>
             </ul>
+            <p><strong>Instagram Story Video:</strong> <a href="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Yellow%20and%20White%20Food%20We%20Are%20Open%20Instagram%20Story.mp4" target="_blank">View Instagram Story Video</a></p>
         </section>
 
         <section id="social-media-ads">
@@ -187,14 +189,14 @@
         </section>
 
         <section id="downloads">
-            <h2>My Projects Files</h2>
+            <h2>Downloadable Files</h2>
             <ul>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/A1%20Screens-Brochure.pdf" download>A1 Screens-Brochure.pdf</a></li>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/SalesForce%20Lead%20Deatils%20%26%20Reports%20(1).pdf" download>SalesForce Lead Details & Reports (1).pdf</a></li>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/hiring-poster.pdf" download>hiring-poster.pdf</a></li>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/Logo%20Created%20by%20Canva.pdf" download>Logo Created by Canva.pdf</a></li>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/Opening%20soon.pdf" download>Opening soon.pdf</a></li>
-                <li><a href="https://github.com/nadeer12/Nadeer_Portfolio/raw/main/Bus%20Roots.pdf" download>Bus Roots.pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/A1%20Screens-Brochure.pdf">A1 Screens-Brochure.pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/SalesForce%20Lead%20Deatils%20%26%20Reports%20(1).pdf">SalesForce Lead Details & Reports (1).pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/hiring-poster.pdf">hiring-poster.pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Logo%20Created%20by%20Canva.pdf">Logo Created by Canva.pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Opening%20soon.pdf">Opening soon.pdf</a></li>
+                <li><a href="#" class="pdf-link" data-pdf="https://github.com/nadeer12/Nadeer_Portfolio/blob/main/Bus%20Roots.pdf">Bus Roots.pdf</a></li>
             </ul>
         </section>
     </main>
@@ -202,7 +204,7 @@
     <button class="back-to-top" id="backToTop">Back to Top</button>
 
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <p>&copy; 2024 Mohammed Nadeer KV</p>
     </footer>
 
     <!-- Modal for PDF Viewing -->
@@ -229,7 +231,7 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         };
 
-        // Modal functionality for PDF links
+        // Modal functionality for PDFs
         const pdfLinks = document.querySelectorAll('.pdf-link');
         const modal = document.getElementById('pdfModal');
         const pdfViewer = document.getElementById('pdfViewer');
@@ -240,19 +242,19 @@
                 event.preventDefault();
                 const pdfUrl = this.getAttribute('data-pdf');
                 pdfViewer.src = pdfUrl;
-                modal.style.display = 'block';
+                modal.style.display = "block";
             });
         });
 
         closeModal.onclick = function() {
-            modal.style.display = 'none';
-            pdfViewer.src = ''; // Clear the source to stop the PDF from loading
+            modal.style.display = "none";
+            pdfViewer.src = ""; // Clear the src to stop the PDF from loading
         };
 
         window.onclick = function(event) {
             if (event.target == modal) {
-                modal.style.display = 'none';
-                pdfViewer.src = ''; // Clear the source to stop the PDF from loading
+                modal.style.display = "none";
+                pdfViewer.src = ""; // Clear the src to stop the PDF from loading
             }
         };
     </script>
