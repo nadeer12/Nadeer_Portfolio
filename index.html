@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Existing styles */
         html {
             scroll-padding-top: 80px;
         }
+        
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f4f6f8;
@@ -21,7 +21,6 @@
             scroll-behavior: smooth;
         }
 
-        /* New sidebar styles */
         .sidebar {
             position: fixed;
             left: 0;
@@ -54,7 +53,6 @@
             height: 24px;
         }
 
-        /* Modified header styles */
         header {
             background: linear-gradient(135deg, #6194f3, #2f00ff);
             color: #fff;
@@ -64,7 +62,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-left: 60px; /* Account for sidebar */
+            margin-left: 60px;
         }
 
         .profile-section {
@@ -82,15 +80,6 @@
             border: 3px solid white;
             object-fit: cover;
         }
-
-        /* Adjust main content */
-        main {
-            padding: 30px;
-            max-width: 900px;
-            margin: 0 auto;
-            margin-left: calc(60px + auto); /* Account for sidebar */
-        }
-
 
         nav ul {
             list-style: none;
@@ -112,15 +101,21 @@
             color: #FFC107;
         }
 
+        main {
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-left: calc(60px + auto);
+        }
 
-     section {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 40px 20px 20px; /* Added top padding for visibility when scrolled */
-    margin-bottom: 20px;
-    transition: transform 0.3s;
-}
+        section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px 20px 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
 
         section:hover {
             transform: scale(1.02);
@@ -134,14 +129,15 @@
 
         footer {
             background: #ffffff;
-            color: #2f00ff;
+            color: #f5795b;
             text-align: center;
             padding: 20px 0;
             font-size: 0.9em;
+            margin-left: 60px;
         }
 
         a {
-            color:  #4a7fe2;
+            color: #4a7fe2;
             text-decoration: none;
         }
 
@@ -154,7 +150,7 @@
             bottom: 20px;
             right: 20px;
             display: none;
-            background:  #4a7fe2;
+            background: #4a7fe2;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -204,6 +200,23 @@
                 flex-direction: column;
                 gap: 10px;
             }
+            
+            .sidebar {
+                width: 50px;
+            }
+            
+            header, main, footer {
+                margin-left: 50px;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -227,13 +240,12 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#lead-generation">Lead Generation</a></li>
-                <li><a href="#poster-design">Poster Design</a></li>
-                <li><a href="#social-media-ads">Social Media Ads</a></li>
+                
                 <li><a href="#downloads">Downloads</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <section id="lead-generation">
             <h2>Lead Generation Using Salesforce</h2>
@@ -256,7 +268,7 @@
         <section id="poster-design">
             <h2>Poster Design with Canva</h2>
             <p><strong>Objective:</strong> Design visually engaging posters for client needs.</p>
-            <p><strong>Description:</strong> I’ve designed promotional materials, using Canva’s extensive tools to create attractive posters tailored to client branding requirements.</p>
+            <p><strong>Description:</strong> I've designed promotional materials, using Canva's extensive tools to create attractive posters tailored to client branding requirements.</p>
             <h3>Examples of Poster Designs:</h3>
             <ul>
                 <li>Created for events, product promotions, and brand awareness.</li>
@@ -270,7 +282,7 @@
             <h3>Key Actions:</h3>
             <ul>
                 <li>Developed ad copy and visuals aligned with brand goals.</li>
-                <li>Used Google Ads and Instagram’s audience insights to refine targeting.</li>
+                <li>Used Google Ads and Instagram's audience insights to refine targeting.</li>
                 <li>Tracked engagement metrics (clicks, reach, impressions) to evaluate ad effectiveness.</li>
             </ul>
         </section>
